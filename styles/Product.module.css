@@ -1,0 +1,68 @@
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+}
+.left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right {
+  flex: 1;
+  padding: 50px;
+}
+.imgContainer {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+.price {
+  color: #d1411e;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid #d1411e;
+}
+.quantityNo {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+.quantityButton {
+  height: 40px;
+  line-height: 30px;
+  width: 40px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+.quantityNumbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.desc {
+  font-size: 20px;
+}
+.quantity {
+  font-size: 25px;
+}
+.quantityNumbers {
+  color: #d1411e;
+  font-size: 24px;
+  font-weight: 500;
+}
+.deliveryPartners{
+    width: 100%;
+    justify-content: space-between;
+}
+.deliveryPartnersLogo{
+    display: flex;
+    border-radius: 100%;
+    cursor: pointer;
+}
