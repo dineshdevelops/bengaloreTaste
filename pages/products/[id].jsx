@@ -2,12 +2,12 @@ import React from "react";
 import styles from "../../styles/Product.module.css";
 import Image from "next/image";
 const Product = () => {
-  const [productCount, setProductCount] = React.useState(0);
+  const [productCount, setProductCount] = React.useState(1);
   const handlePlusClick = () => {
-    productCount < 10 ? setProductCount(productCount + 1) : setProductCount(0)
+    productCount < 10 ? setProductCount(productCount + 1) : setProductCount(1)
   }
   const handleMinusClick = () => {
-    productCount > 0 ? setProductCount(productCount - 1) : setProductCount(0)
+    productCount > 1 ? setProductCount(productCount - 1) : setProductCount(1)
   }
   const dosa = {
     id: 1,
@@ -33,8 +33,8 @@ const Product = () => {
           <span className={styles.quantityNumbers}>{productCount}</span>
           <button className={styles.quantityButton} onClick={handleMinusClick}>-</button>
         </div>
-        <div className={styles.deliveryPartners}>
         <h3 className={styles.quantity}>Order Now from our delivery partners</h3>
+        <div className={styles.deliveryPartners}>
           <Image src="/img/swiggy.png" width="100px" height="100px" alt="" className={styles.deliveryPartnersLogo}/>
           <Image src="/img/zomato.png" width="100px" height="100px" alt="" className={styles.deliveryPartnersLogo} />
         </div>
