@@ -59,10 +59,36 @@
 }
 .deliveryPartners{
     width: 100%;
-    justify-content: space-between;
+    display: flex;
+    column-gap: 50px;
 }
 .deliveryPartnersLogo{
     display: flex;
     border-radius: 100%;
     cursor: pointer;
+}
+@media screen and (max-width:480px){
+  .container{
+    height: auto;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .imgContainer{
+    width: 70vw;
+    height: 70vw;
+  }
+  .title{
+    margin: 5px;
+  }
+  .quantityNo{
+    width: 100%;
+  }
+  .deliveryPartners{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+  }
 }
