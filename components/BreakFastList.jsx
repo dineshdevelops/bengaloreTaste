@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/BreakFastList.module.css";
 import BreakFastCard from "./BreakFastCard";
-const BreakFastList = () => {
+const BreakFastList = ({ productList }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>ONLY RESTAURANT TO BREAK YOUR FASTING</h1>
@@ -11,14 +11,9 @@ const BreakFastList = () => {
         fruit, or healthy cereal.
       </p>
       <div className={styles.wrapper}>
-        <BreakFastCard />
-        <BreakFastCard />
-        <BreakFastCard />
-        <BreakFastCard />
-        <BreakFastCard />
-        <BreakFastCard />
-        <BreakFastCard />
-        <BreakFastCard />
+        {productList.map((product) => (
+          <BreakFastCard key={product._id} product={product} />
+        ))}
       </div>
     </div>
   );

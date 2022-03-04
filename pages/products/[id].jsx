@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "../../styles/Product.module.css";
 import Image from "next/image";
-const Product = () => {
+import axios from "axios";
+const Product = ({product}) => {
   const [productCount, setProductCount] = React.useState(1);
   const handlePlusClick = () => {
     productCount < 10 ? setProductCount(productCount + 1) : setProductCount(1)
@@ -9,24 +10,18 @@ const Product = () => {
   const handleMinusClick = () => {
     productCount > 1 ? setProductCount(productCount - 1) : setProductCount(1)
   }
-  const dosa = {
-    id: 1,
-    img: "/img/dosa.png",
-    name: "Plain Dosa",
-    price: 30,
-    desc: "A dosa is a thin pancake originating from South India, made from a fermented batter predominantly consisting of lentils and rice.",
-  };
+  console.log(product)
   return (
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.imgContainer}>
-          <Image src={dosa.img} objectFit="contain" layout="fill" alt="" />
+          <Image src={product.img} objectFit="contain" layout="fill" alt="" />
         </div>
       </div>
       <div className={styles.right}>
-        <h1 className={styles.title}>{dosa.name}</h1>
-        <span className={styles.price}>₹{dosa.price*productCount}</span>
-        <p className={styles.desc}>{dosa.desc}</p>
+        <h1 className={styles.title}>{product.title}</h1>
+        <span className={styles.price}>₹{product.price*productCount}</span>
+        <p className={styles.desc}>{product.desc}</p>
         <h3 className={styles.quantity}>Choose the Quantity</h3>
         <div className={styles.quantityNo}>
           <button  className={styles.quantityButton} onClick={handlePlusClick}>+</button>
@@ -44,3 +39,12 @@ const Product = () => {
 };
 
 export default Product;
+export const getServerSideProps = async ({params}) => {
+  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+  return {
+    props: {
+      product: res.data,
+    },
+  };
+};
+
