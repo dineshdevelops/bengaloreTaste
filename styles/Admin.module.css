@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.table {
+  width: 120%;
+  border-spacing: 30px;
+  text-align: left;
+  font-weight: bold;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+.availabilityTrue {
+  background-color: green;
+  margin-left: 10px;
+  color: white;
+}
+.availabilityFalse {
+  background-color: red;
+  margin-left: 10px;
+  color: white;
+}
