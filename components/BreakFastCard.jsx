@@ -6,7 +6,7 @@ const BreakFastCard = ({ product }) => {
   return (
     <div className={styles.container}>
       <Link href={`/products/${product._id}`} passHref>
-        <Image src={product.img} alt="" width="500" height="500" />
+        {product.availability ? <Image src={product.img} alt="" width="500" height="500" />:<Image src={"/img/unavailable.png"} alt="" width="500" height="500" />}
       </Link>
       <h1 className={styles.title}>{product.title}</h1>
       <span className={styles.price}>₹{product.price}</span>
