@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../styles/Login.module.css";
+import Head from "next/head";
 
 const Login = () => {
   const [username, setUsername] = useState(null);
@@ -24,6 +25,11 @@ const Login = () => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{product.title}</title>
+        <meta name="description" content="Bengalore Taste next app" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <div className={styles.wrapper}>
         <h1>Admin Dashboard</h1>
         <input
