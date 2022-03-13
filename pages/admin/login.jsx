@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{product.title}</title>
+        <title>Login Page</title>
         <meta name="description" content="Bengalore Taste next app" />
         <link rel="icon" href="/favicon.png" />
       </Head>
