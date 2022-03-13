@@ -4,7 +4,8 @@ import styles from "../styles/Home.module.css";
 import axios from "axios";
 import BestSeller from "../components/BestSellerList";
 import Slides from "../components/Slides";
-export default function Home({productList}) {
+import Image from "next/image";
+export default function Home({ productList }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +15,10 @@ export default function Home({productList}) {
       </Head>
       <Slides />
       <BestSeller productList={productList} />
+      <div className={styles.classicMenu}>
+        <h1>Our Classic MENU</h1>
+        <Image src={"/img/classicMenu.jpg"} alt="" width="900" height="900" />
+      </div>
     </div>
   );
 }
