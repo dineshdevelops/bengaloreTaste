@@ -22,13 +22,19 @@ const ProductSchema = new mongoose.Schema(
       maxlength: 60,
       required: true,
     },
-    availability:{
-        type:Boolean,
-        required:true,
-        default: false,
+    availability: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
+    bestSeller: {
+      type: Boolean,
+      required: true,
+      default: false,
     }
   },
   { timestamps: true }
 );
 
-export default mongoose.models.Product || mongoose.model("Product",ProductSchema);
+export default mongoose.models.Product ||
+  mongoose.model("Product", ProductSchema);
