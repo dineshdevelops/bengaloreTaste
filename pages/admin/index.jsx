@@ -20,6 +20,23 @@ const index = ({ products }) => {
       console.log(err);
     }
   };
+  //BestSeller handler
+  const handleBestSeller = async (id) => {
+    //To get the bestSeller from product list
+    const item = productList.filter((product) => product._id === id)[0];
+    const bestSeller = item.bestSeller;
+    try {
+      const res = await axios.put("http://localhost:3000/api/products/" + id, {
+        bestSeller: !bestSeller,
+      });
+      const updatedProductList = await axios.get(
+        "http://localhost:3000/api/products"
+      );
+      setProductList(updatedProductList.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -32,6 +49,7 @@ const index = ({ products }) => {
               <th>Title</th>
               <th>Price</th>
               <th>Action</th>
+              <th>BestSeller</th>
             </tr>
           </tbody>
           {productList.map((product) => (
@@ -61,6 +79,20 @@ const index = ({ products }) => {
                     }}
                   >
                     {product.availability ? "AVAILABLE" : "UNAVAILABLE"}
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className={
+                      product.bestSeller
+                        ? styles.availabilityTrue
+                        : styles.availabilityFalse
+                    }
+                    onClick={() => {
+                      handleBestSeller(product._id);
+                    }}
+                  >
+                    {product.bestSeller ? "Best Seller" : "NON Best Seller"}
                   </button>
                 </td>
               </tr>
