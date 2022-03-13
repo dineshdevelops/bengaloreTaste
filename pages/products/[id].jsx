@@ -71,7 +71,7 @@ const Product = ({ product }) => {
 export default Product;
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `http://localhost:3000/api/products/${params.id}`
+    `${process.env.REACT_API_URL}/api/products/${params.id}`
   );
   return {
     props: {
