@@ -1,0 +1,9 @@
+.container {
+  height: 50%;
+}
+@media (max-width: 600px) {
+  .container {
+    min-height: 100px;
+  }
+
+}
