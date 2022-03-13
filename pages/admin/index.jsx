@@ -45,7 +45,7 @@ const index = ({ products }) => {
           <tbody>
             <tr className={styles.trTitle}>
               <th>Image</th>
-              <th>Id</th>
+              {/* <th>Id</th> */}
               <th>Title</th>
               <th>Price</th>
               <th>Action</th>
@@ -64,9 +64,9 @@ const index = ({ products }) => {
                     alt=""
                   />
                 </td>
-                <td>{product._id.slice(0, 5) + "..."}</td>
+                {/* <td>{product._id.slice(0, 5) + "..."}</td> */}
                 <td>{product.title}</td>
-                <td>${product.price}</td>
+                <td>₹ {product.price}</td>
                 <td>
                   <button
                     className={
