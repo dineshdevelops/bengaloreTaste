@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../../styles/Product.module.css";
 import Image from "next/image";
 import axios from "axios";
+import Head from "next/head";
+
 const Product = ({ product }) => {
   const [productCount, setProductCount] = React.useState(1);
   const handlePlusClick = () => {
@@ -15,6 +17,11 @@ const Product = ({ product }) => {
   };
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{product.title}</title>
+        <meta name="description" content="Bengalore Taste next app" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <div className={styles.left}>
         <div className={styles.imgContainer}>
           <Image src={product.img} objectFit="contain" layout="fill" alt="" />

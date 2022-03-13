@@ -8,8 +8,8 @@ export default function Home({productList}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>AK Restaurant</title>
-        <meta name="description" content="AK Restaurant next app" />
+        <title>Bengalore Taste</title>
+        <meta name="description" content="Bengalore Taste next app" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Slides />

@@ -12,31 +12,31 @@ const NavBar = () => {
         </div>
         <div className={styles.texts}>
           <div className={styles.text}>ORDER NOW</div>
-          <div className={styles.text}>999 48X XX95</div>
+          <div className={styles.text}>+91 7416432525</div>
         </div>
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
           <Link href={`/`} passHref>
-            <li className={styles.listItem}>HomePage</li>
+            <li className={styles.listItem}>HOME</li>
           </Link>
           <Link href={`/products`} passHref>
-            <li className={styles.listItem}>Products</li>
+            <li className={styles.listItem}>MENU</li>
           </Link>
         </ul>
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-          <Image src="/img/AK-Foods.png" alt="" width="250px" height="130px" />
+          <Image src="/img/logo.png" alt="" width="150px" height="100px" />
         </ul>
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
           <Link href={`/about`} passHref>
-            <li className={styles.listItem}>About US</li>
+            <li className={styles.listItem}>ABOUT US</li>
           </Link>
           <Link href={`/contactUs`} passHref>
-            <li className={styles.listItem}>Contact US</li>
+            <li className={styles.listItem}>CONTACT US</li>
           </Link>
         </ul>
       </div>
