@@ -15,7 +15,7 @@ const Login = () => {
         username,
         password,
       });
-      router.push("/admin");
+      router.push(`${process.env.REACT_API_URL}/admin`);
     } catch (err) {
       console.log(err);
       setError(true);
