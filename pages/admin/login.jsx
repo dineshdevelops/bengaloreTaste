@@ -12,11 +12,11 @@ const Login = () => {
 
   const handleClick = async () => {
     try {
-      await axios.post(`${process.env.REACT_API_URL}/api/login`, {
+      await axios.post(`/api/login`, {
         username,
         password,
       });
-      router.push(`${process.env.REACT_API_URL}/`);
+      router.push(`/admin`);
     } catch (err) {
       console.log(err);
       setError(true);
