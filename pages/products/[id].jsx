@@ -48,7 +48,7 @@ const Product = ({ product }) => {
           <Image
             src="/img/swiggy.png"
             width="100px"
-            onClick={() => deliveryPartnerRedirect("https://www.swiggy.com/restaurants/sangeethas-home-kitchen-kosumada-street-tiruvennanallur-tiruvannamalai-153925")}
+            onClick={() => deliveryPartnerRedirect("https://www.swiggy.com/restaurants/bengalore-taste-dwarka-nagar-vizag-507398")}
             height="100px"
             alt=""
             className={styles.deliveryPartnersLogo}
@@ -56,7 +56,7 @@ const Product = ({ product }) => {
           <Image
             src="/img/zomato.png"
             width="100px"
-            onClick={() => deliveryPartnerRedirect("https://www.zomato.com/tiruvannamalai/hotel-new-annapoorna-tiruvannamalai-locality/order")}
+            onClick={() => deliveryPartnerRedirect("https://www.swiggy.com/restaurants/bengalore-taste-dwarka-nagar-vizag-507398")}
 
             height="100px"
             alt=""
