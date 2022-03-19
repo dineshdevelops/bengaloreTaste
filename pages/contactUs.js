@@ -8,9 +8,13 @@ const contactUs = () => {
         <div className={styles.addressBox}>
           <h1>Bengalore Taste</h1>
           <span className={styles.addressText}>
-            D.No : 9, 14-12, VIP Rd,
-            <br /> CBM Compound Visakhapatnam,
+            D.No : 9-14-12, VIP Rd,
+            <br /> CBM Compound, Visakhapatnam,
             <br /> Andhra Pradesh 530003
+          </span>
+          <span className={styles.contactUs}>
+            PhoneNumber: +91 7416432525 <br />
+            EmailAddress: bengaloretaste@gmail.com
           </span>
         </div>
         <div className={styles.map}>

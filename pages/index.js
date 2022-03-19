@@ -4,16 +4,21 @@ import styles from "../styles/Home.module.css";
 import axios from "axios";
 import BestSeller from "../components/BestSellerList";
 import Slides from "../components/Slides";
-export default function Home({productList}) {
+import Image from "next/image";
+export default function Home({ productList }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>AK Restaurant</title>
-        <meta name="description" content="AK Restaurant next app" />
+        <title>Bengalore Taste</title>
+        <meta name="description" content="Bengalore Taste next app" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Slides />
       <BestSeller productList={productList} />
+      <div className={styles.classicMenu}>
+        <h1>Our Classic MENU</h1>
+        <Image src={"/img/classicMenu.jpg"} alt="" width="900" height="900" />
+      </div>
     </div>
   );
 }

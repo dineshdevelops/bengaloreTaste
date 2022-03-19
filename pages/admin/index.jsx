@@ -9,11 +9,11 @@ const index = ({ products }) => {
     const item = productList.filter((product) => product._id === id)[0];
     const availability = item.availability;
     try {
-      const res = await axios.put("http://localhost:3000/api/products/" + id, {
+      const res = await axios.put(`https://bengaloretaste.com/api/products/` + id, {
         availability: !availability,
       });
       const updatedProductList = await axios.get(
-        "http://localhost:3000/api/products"
+        `https://bengaloretaste.com/api/products`
       );
       setProductList(updatedProductList.data);
     } catch (err) {
@@ -26,11 +26,11 @@ const index = ({ products }) => {
     const item = productList.filter((product) => product._id === id)[0];
     const bestSeller = item.bestSeller;
     try {
-      const res = await axios.put("http://localhost:3000/api/products/" + id, {
+      const res = await axios.put(`https://bengaloretaste.com/api/products/` + id, {
         bestSeller: !bestSeller,
       });
       const updatedProductList = await axios.get(
-        "http://localhost:3000/api/products"
+        `https://bengaloretaste.com/api/products`
       );
       setProductList(updatedProductList.data);
     } catch (err) {

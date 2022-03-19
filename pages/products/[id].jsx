@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../../styles/Product.module.css";
 import Image from "next/image";
 import axios from "axios";
+import Head from "next/head";
+
 const Product = ({ product }) => {
   const [productCount, setProductCount] = React.useState(1);
   const handlePlusClick = () => {
@@ -15,6 +17,11 @@ const Product = ({ product }) => {
   };
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{product.title}</title>
+        <meta name="description" content="Bengalore Taste next app" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <div className={styles.left}>
         <div className={styles.imgContainer}>
           <Image src={product.img} objectFit="contain" layout="fill" alt="" />
@@ -41,7 +48,11 @@ const Product = ({ product }) => {
           <Image
             src="/img/swiggy.png"
             width="100px"
-            onClick={() => deliveryPartnerRedirect("https://www.swiggy.com/restaurants/sangeethas-home-kitchen-kosumada-street-tiruvennanallur-tiruvannamalai-153925")}
+            onClick={() =>
+              deliveryPartnerRedirect(
+                "https://www.swiggy.com/restaurants/bengalore-taste-dwarka-nagar-vizag-507398"
+              )
+            }
             height="100px"
             alt=""
             className={styles.deliveryPartnersLogo}
@@ -49,8 +60,11 @@ const Product = ({ product }) => {
           <Image
             src="/img/zomato.png"
             width="100px"
-            onClick={() => deliveryPartnerRedirect("https://www.zomato.com/tiruvannamalai/hotel-new-annapoorna-tiruvannamalai-locality/order")}
-
+            onClick={() =>
+              deliveryPartnerRedirect(
+                "https://www.swiggy.com/restaurants/bengalore-taste-dwarka-nagar-vizag-507398"
+              )
+            }
             height="100px"
             alt=""
             className={styles.deliveryPartnersLogo}
@@ -64,7 +78,7 @@ const Product = ({ product }) => {
 export default Product;
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `http://localhost:3000/api/products/${params.id}`
+    `https://bengaloretaste.com/api/products/${params.id}`
   );
   return {
     props: {
