@@ -103,10 +103,6 @@ const index = ({ products }) => {
     </div>
   );
 };
-<<<<<<< HEAD
-export const getServerSideProps = async () => {
-  const ProductsRes = await axios.get("http://localhost:3000/api/products");
-=======
 export const getServerSideProps = async (ctx) => {
   const myCookie=ctx.req?.cookies || "";
   if(myCookie.token !== process.env.TOKEN){
@@ -118,7 +114,6 @@ export const getServerSideProps = async (ctx) => {
     };
   }
   const ProductsRes = await axios.get(`https://bengaloretaste.com/api/products`);
->>>>>>> parent of 6873365 (AWAIT)
   return {
     props: {
       products: ProductsRes.data,
