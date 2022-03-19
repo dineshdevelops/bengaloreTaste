@@ -70,7 +70,7 @@ const Product = ({ product }) => {
 
 export default Product;
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(
+  const res = await fetch(
     `https://bengaloretaste.com/api/products/${params.id}`
   );
   return {
