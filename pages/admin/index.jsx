@@ -13,7 +13,7 @@ const index = ({ products }) => {
         availability: !availability,
       });
       const updatedProductList = await axios.get(
-        `http://bengaloretaste.com//api/products`
+        `http://bengaloretaste.com/api/products`
       );
       setProductList(updatedProductList.data);
     } catch (err) {
