@@ -9,11 +9,11 @@ const index = ({ products }) => {
     const item = productList.filter((product) => product._id === id)[0];
     const availability = item.availability;
     try {
-      const res = await axios.put(`http://bengaloretaste.com/api/products/` + id, {
+      const res = await axios.put(`https://bengaloretaste.com/api/products/` + id, {
         availability: !availability,
       });
       const updatedProductList = await axios.get(
-        `http://bengaloretaste.com/api/products`
+        `https://bengaloretaste.com/api/products`
       );
       setProductList(updatedProductList.data);
     } catch (err) {
@@ -26,11 +26,11 @@ const index = ({ products }) => {
     const item = productList.filter((product) => product._id === id)[0];
     const bestSeller = item.bestSeller;
     try {
-      const res = await axios.put(`http://bengaloretaste.com/api/products/` + id, {
+      const res = await axios.put(`https://bengaloretaste.com/api/products/` + id, {
         bestSeller: !bestSeller,
       });
       const updatedProductList = await axios.get(
-        `http://bengaloretaste.com/api/products`
+        `https://bengaloretaste.com/api/products`
       );
       setProductList(updatedProductList.data);
     } catch (err) {
@@ -113,7 +113,7 @@ export const getServerSideProps = async (ctx) => {
       },
     };
   }
-  const ProductsRes = await axios.get(`http://bengaloretaste.com/api/products`);
+  const ProductsRes = await axios.get(`https://bengaloretaste.com/api/products`);
   return {
     props: {
       products: ProductsRes.data,

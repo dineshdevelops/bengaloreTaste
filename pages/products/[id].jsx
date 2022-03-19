@@ -71,7 +71,7 @@ const Product = ({ product }) => {
 export default Product;
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(
-    `${process.env.REACT_API_URL}/api/products/${params.id}`
+    `https://bengaloretaste.com/api/products/${params.id}`
   );
   return {
     props: {
