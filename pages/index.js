@@ -22,7 +22,7 @@ export default function Home({ productList }) {
     </div>
   );
 }
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await axios.get(`https://bengaloretaste.com/api/products/bestSeller`);
   return {
     props: {
