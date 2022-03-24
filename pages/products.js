@@ -1,8 +1,9 @@
 import Head from "next/head";
 import BreakFastList from "../components/BreakFastList";
 import styles from "../styles/Home.module.css";
-import axios from "axios";
-export default function Products({productList}) {
+import clientPromise from "../lib/mongodb";
+
+export default function Products({ productList }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,11 +15,11 @@ export default function Products({productList}) {
     </div>
   );
 }
-export const getServerSideProps = async () => {
-  const res = await axios.get(`https://bengaloretaste.com/api/products`);
+export async function getServerSideProps(context) {
+  //const URL=process.env.NODE_ENV ==='PRODUCTION'? process.env.PROD_URL : process.env.NEXT_LOCAL_URL
+  const data = await fetch(`https://bengaloretaste.com/api/products`);
+  const recepies = await data.json();
   return {
-    props: {
-      productList: res.data,
-    },
+    props: { recepies },
   };
-};
+}
