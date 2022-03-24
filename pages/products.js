@@ -1,7 +1,6 @@
 import Head from "next/head";
 import BreakFastList from "../components/BreakFastList";
 import styles from "../styles/Home.module.css";
-import clientPromise from "../lib/mongodb";
 
 export default function Products({ productList }) {
   return (
