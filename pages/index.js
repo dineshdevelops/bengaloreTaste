@@ -23,10 +23,9 @@ export default function Home({ productList }) {
   );
 }
 export const getServerSideProps = async () => {
-  const res = await axios.get(`https://bengaloretaste.com/api/products/bestSeller`);
+  const data = await fetch(`https://bengaloretaste.com/api/products/bestSeller`);
+  const productList = await data.json();
   return {
-    props: {
-      productList: res.data,
-    },
+    props: { productList },
   };
 };
