@@ -23,7 +23,7 @@ export default function Home({ productList }) {
   );
 }
 export const getServerSideProps = async () => {
-  const data = await fetch(`https://bengaloretaste.com/api/products/bestSeller`);
+  const data = await fetch(`https://bengalore-taste-dineshdevelops.vercel.app/api/products/bestSeller`);
   const productList = await data.json();
   return {
     props: { productList },

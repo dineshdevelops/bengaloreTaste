@@ -16,7 +16,7 @@ export default function Products({ productList }) {
 }
 export async function getServerSideProps(context) {
   //const URL=process.env.NODE_ENV ==='PRODUCTION'? process.env.PROD_URL : process.env.NEXT_LOCAL_URL
-  const data = await fetch(`https://bengaloretaste.com/api/products`);
+  const data = await fetch(`https://bengalore-taste-dineshdevelops.vercel.app/api/products`);
   const productList = await data.json();
   return {
     props: { productList },

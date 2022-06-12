@@ -33,7 +33,7 @@ import clientPromise from "../../../lib/mongodb";
 export default async function handler(req, res) {
   const {id} = req.query;
   const client =await clientPromise
-  const db = client.db("ak-restaurant");
+  const db = client.db("test");
   const data = await db.collection("products").findOne({_id: new ObjectId(id)});
   //console.log(data)
   res.json(data);
